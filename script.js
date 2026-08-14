@@ -70,7 +70,7 @@
     { name: "Business cards",      spec: "600 GSM · Edge painted", seed: "BDP_PRoduct_Pictures/bussiness_card1.png" },
     { name: "Luxury boxes",        spec: "Rigid · Magnet close",   seed: "BDP_PRoduct_Pictures/Gift_Box_P1.png" },
     { name: "Paper bags",          spec: "Kraft · Rope handle",    seed: "BDP_PRoduct_Pictures/Paper Bag.png" },
-    { name: "Gift boxes",          spec: "Foil · Ribbon pull",     seed: "BDP_PRoduct_Pictures/Gift_Box_P2.png" },
+    { name: "Gift boxes",          spec: "Foil · Ribbon pull",     seed: "BDP_PRoduct_Pictures/Gift_box_P2.png" },
     { name: "Restaurant menus",    spec: "Laminated · Wipe clean", seed: "BDP_PRoduct_Pictures/Hero_Section_Landscape.png" },
     { name: "Thank you cards",     spec: "Letterpress · 300 GSM",  seed: "BDP_PRoduct_Pictures/Thankyou_card.png" },
     { name: "Booklets",            spec: "Saddle stitch · 32 pp",  seed: "BDP_PRoduct_Pictures/tri-fold brochure.png" },

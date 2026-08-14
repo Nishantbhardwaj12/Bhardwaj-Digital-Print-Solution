@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0B0B0B" />
+
+  <!-- SEO -->
+  <title>BHARDWAJ - DIGITAL & PRINT SOLUTIONS  &amp; Packaging Solutions for Modern Brands</title>
+  <meta name="description" content="Aurum is a print and packaging company producing luxury boxes, custom packaging, business stationery and brand collateral for fashion, food, jewellery and retail brands." />
+  <meta name="keywords" content="printing company, luxury packaging, custom boxes, paper bags, business cards, offset printing, digital printing, brand identity printing" />
+  <meta name="author" content="Aurum Print &amp; Packaging" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BHARDWAJ - DIGITAL & PRINT SOLUTIONS &amp; Packaging Solutions" />
+  <meta property="og:description" content="Packaging, branding, stationery and smart print solutions for modern brands." />
+  <meta property="og:image" content="https://picsum.photos/seed/aurum-og/1200/630" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 (grid + utilities only) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- product page stylesheet -->
+   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a1a1a;
+            --primary-gold: #d4af37;
+            --secondary-gold: #c9a227;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --accent-dark: #2a2a2a;
+            --accent-light: #3a3a3a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(26, 26, 26, 0.95);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--primary-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(42, 42, 42, 0.5) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 12px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .hero .gold-text {
+            color: var(--primary-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-gold), transparent);
+            border-radius: 2px;
+        }
+
+        .section-title .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 4rem 0;
+            margin-top: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--accent-dark);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--accent-light);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.6s ease backwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 4rem 0;
+            margin-top: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--accent-dark);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--accent-light);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.6s ease backwards;
+            cursor: pointer;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            overflow: hidden;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--primary-gold);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .product-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.8rem;
+        }
+
+        .feature-badge {
+            background: var(--accent-light);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 0.5px solid var(--accent-light);
+        }
+
+        /* Load More Section */
+        .load-more-container {
+            text-align: center;
+            margin: 3rem 0;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .load-more-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--primary-dark);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .load-more-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .load-more-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .load-more-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .load-more-btn.loading {
+            pointer-events: none;
+        }
+
+        .load-more-btn.loading::after {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-left: 8px;
+            border: 2px solid rgba(26, 26, 26, 0.3);
+            border-top-color: var(--primary-dark);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        /* Hidden Product Cards */
+        .product-card.hidden {
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            margin: 4rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--accent-dark);
+            border-top: 1px solid var(--accent-light);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .services-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .load-more-btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Scroll Animation */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-animation.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+</head>
+
+<body>
+
+  <!-- ===== PRELOADER ==================================================== -->
+  <div class="preloader" id="preloader">
+    <div class="press">
+      <div class="press-spinner"></div>
+      <div class="press-word">BHARDWAJ - DIGITAL & PRINT SOLUTIONS</div>
+      <div class="press-bar"><span></span></div>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER ======================================================= -->
+  <header class="topbar" id="topbar">
+    <div class="shell">
+      <a href="#hero" class="brand" aria-label="Aurum home">
+        <span class="brand-mark">BDP</span>
+        <span>
+          <span class="brand-name">BHARDWAJ</span>
+          <span class="brand-sub">Digital &amp; Print</span>
+        </span>
+      </a>
+
+      <nav aria-label="Main">
+        <ul class="nav-list" id="navList">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="index.html#process">Process</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn-a nav-cta js-ripple">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <aside class="drawer" id="drawer" aria-label="Mobile menu">
+    <div class="drawer-top">
+      <span class="brand-name">MENU</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#why">Why us</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="btn-a js-ripple" data-open-quote>Request a quote</button>
+  </aside>
+  <div class="veil" id="veil"></div>
+
+  <main id="main">
+
+      <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="gold-text">Products</span></h2>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Initial Products -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" alt="Business Cards" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Premium</span>
+                        <h3>Business Cards</h3>
+                        <p>Professional business cards that make lasting impressions. Available in various finishes including matte, gloss, and specialty coatings.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">250 gsm Paper</span>
+                            <span class="feature-badge">Die-cut</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=300&fit=crop" alt="Luxury Boxes" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Luxury</span>
+                        <h3>Luxury Boxes</h3>
+                        <p>Elegantly designed packaging boxes perfect for premium products. Custom dimensions and premium materials for unforgettable unboxing experiences.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">Custom Size</span>
+                            <span class="feature-badge">Embossing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1604089862405-09e62e26e8e0?w=400&h=300&fit=crop" alt="Paper Bags" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Eco-Friendly</span>
+                        <h3>Paper Bags</h3>
+                        <p>Sustainable paper bags ideal for retail, takeout, and gifting. Customizable with your logo and brand colors for effective branding.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">Eco Friendly</span>
+                            <span class="feature-badge">Various Sizes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1611074899111-af1e6a07d539?w=400&h=300&fit=crop" alt="Gift Boxes" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Special</span>
+                        <h3>Gift Boxes</h3>
+                        <p>Beautiful gift boxes that elevate product presentation. Perfect for special occasions, corporate gifts, and retail packaging with premium finishing options.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">Ribbon Ready</span>
+                            <span class="feature-badge">Luxury Finish</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden Products for Load More -->
+                <div class="product-card hidden">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=300&fit=crop" alt="Hang Tags" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Branding</span>
+                        <h3>Hang Tags</h3>
+                        <p>Custom hang tags for product differentiation and brand awareness. Durable tags with string or eyelet attachments in various shapes and sizes.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">Custom Cut</span>
+                            <span class="feature-badge">String/Eyelet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card hidden">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=300&fit=crop" alt="Brochures" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Marketing</span>
+                        <h3>Brochures</h3>
+                        <p>Professional brochures that communicate your message effectively. Folded or flat designs with vibrant full-color printing to captivate your audience.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">Full Color</span>
+                            <span class="feature-badge">Tri-fold</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card hidden">
+                    <img src="https://images.unsplash.com/photo-1608229545630-ba8e7a6c7b31?w=400&h=300&fit=crop" alt="Packaging Design" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Innovation</span>
+                        <h3>Custom Packaging</h3>
+                        <p>Innovative packaging solutions tailored to your product needs. From food packaging to electronics, we design packages that protect and promote.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">Protective</span>
+                            <span class="feature-badge">Branded</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card hidden">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=300&fit=crop" alt="Letterheads" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Professional</span>
+                        <h3>Letterheads</h3>
+                        <p>Professional letterhead printing that establishes corporate identity. Premium paper stocks with full-color printing for impressive business correspondence.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">Premium Paper</span>
+                            <span class="feature-badge">Color Printing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 11. CONTACT ================================================ -->
+    <section class="band band--alt" id="contact">
+      <div class="shell">
+        <div class="head-row">
+          <div class="head-copy" data-reveal>
+            <p class="plate">Plate 11 <span>/ Contact</span></p>
+            <h2>Tell us what you need printed.</h2>
+            <p class="lede">Send the product size, run quantity and deadline. You get a written quote within one working day.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div data-reveal="left">
+            <div class="info-card">
+              <div class="info-row">
+                <i class="fa-solid fa-phone"></i>
+                <div><b>Phone</b><span>+91 6396969496 <br> +91 8923286177</span></div>
+              </div>
+              
+              <div class="info-row">
+                <i class="fa-solid fa-envelope"></i>
+                <div><b>Email</b><span>nishusharma91616@gmail.com</span></div>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div><b>Plant &amp; office</b><span>Plot 516, vill - Bhoora, Shamli, Uttar Pradesh 247774</span></div>
+              </div>
+              <div class="info-row">
+                <i class="fa-regular fa-clock"></i>
+                <div><b>Open</b><span>Monday to Saturday, 9:30 am – 7:00 pm</span></div>
+              </div>
+
+              <div class="socials">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              </div>
+
+              <!-- Replace this block with your Google Maps iframe embed code -->
+              <div class="map-frame">
+                <div>
+                  <i class="fa-solid fa-map-location-dot"></i>
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13896.887940633582!2d77.1961641029783!3d29.451527553636463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c2
+                 b59f453e167%3A0xf0c90e7d39617384!2sBhura%2C%20Uttar%20Pradesh%20247774!5e0!3m2!1sen!2sin!4v1785995472432!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" 
+                 loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-reveal="right">
+            <!-- ============================================================
+                 CONTACT FORM
+                 Submits to a Google Apps Script Web App, which writes one
+                 row per enquiry into a private Google Sheet.
+                 The Web App URL lives in script.js → CONFIG.SHEET_ENDPOINT
+                 ============================================================ -->
+            <div class="form-wrap" id="contactWrap">
+
+              <form class="form-card" id="contactForm" novalidate>
+
+                <!-- Honeypot: hidden from people, filled in by bots. If it has
+                     a value, the submission is silently dropped. -->
+                <div class="hp" aria-hidden="true">
+                  <label for="cWebsite">Leave this empty</label>
+                  <input type="text" id="cWebsite" name="website" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="cName">Full name <span class="req">*</span></label>
+                    <input type="text" id="cName" name="fullName" placeholder="Priya Sharma" autocomplete="name" required />
+                    <span class="err">Enter your full name.</span>
+                  </div>
+                  <div class="field">
+                    <label for="cCompany">Company name</label>
+                    <input type="text" id="cCompany" name="company" placeholder="Brand or business name" autocomplete="organization" />
+                  </div>
+                </div>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="cEmail">Email address <span class="req">*</span></label>
+                    <input type="email" id="cEmail" name="email" placeholder="you@company.com" autocomplete="email" required />
+                    <span class="err">Enter a valid email address.</span>
+                  </div>
+                  <div class="field">
+                    <label for="cPhone">Phone number <span class="req">*</span></label>
+                    <input type="tel" id="cPhone" name="phone" placeholder="10-digit mobile number" autocomplete="tel" required />
+                    <span class="err">Enter a 10-digit phone number.</span>
+                  </div>
+                </div>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="cService">Service required <span class="req">*</span></label>
+                    <select id="cService" name="service" required>
+                      <option value="">Choose a service</option>
+                      <option>Commercial printing</option>
+                      <option>Luxury packaging</option>
+                      <option>Custom boxes</option>
+                      <option>Paper bags</option>
+                      <option>Business stationery</option>
+                      <option>Labels &amp; stickers</option>
+                      <option>Hang tags</option>
+                      <option>Brochures &amp; catalogues</option>
+                      <option>Restaurant printing</option>
+                      <option>Wedding cards</option>
+                      <option>Corporate gifts printing</option>
+                      <option>Large format printing</option>
+                      <option>Something else</option>
+                    </select>
+                    <span class="err">Choose a service.</span>
+                  </div>
+                  <div class="field">
+                    <label for="cBudget">Budget</label>
+                    <select id="cBudget" name="budget">
+                      <option value="">Optional</option>
+                      <option>Under ₹25,000</option>
+                      <option>₹25,000 – ₹75,000</option>
+                      <option>₹75,000 – ₹2,00,000</option>
+                      <option>₹2,00,000 – ₹5,00,000</option>
+                      <option>Above ₹5,00,000</option>
+                      <option>Not decided yet</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="cMsg">Message <span class="req">*</span></label>
+                  <textarea id="cMsg" name="message" placeholder="Product size, stock, finish, quantity, deadline, delivery city" required></textarea>
+                  <span class="err">Tell us a little about the job.</span>
+                </div>
+
+                <!-- Error strip with a retry action -->
+                <div class="form-alert" id="contactAlert" role="alert" hidden>
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <div>
+                    <b id="contactAlertTitle">Enquiry could not be sent</b>
+                    <small id="contactAlertText">Check your connection and try once more.</small>
+                  </div>
+                  <button type="button" class="btn-ghost" id="contactRetry">
+                    <i class="fa-solid fa-rotate-right"></i> Try again
+                  </button>
+                </div>
+
+                <button type="submit" class="btn-a js-ripple has-spin" id="contactSubmit">
+                  <span class="btn-text">Send enquiry <i class="fa-solid fa-paper-plane"></i></span>
+                  <span class="btn-spin" aria-hidden="true"></span>
+                </button>
+
+                <p class="form-note">
+                  Fields marked <span class="req">*</span> are required. Your details go straight to our
+                  enquiry sheet — we never share them.
+                </p>
+
+                <!-- Loading veil, shown while the request is in flight -->
+                <div class="form-veil" id="contactVeil" hidden>
+                  <div class="press">
+                    <div class="press-spinner"></div>
+                    <div class="press-word">Sending your enquiry</div>
+                    <div class="press-bar"><span></span></div>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Success panel, swapped in after a confirmed write -->
+              <div class="form-done" id="contactDone" role="status" aria-live="polite" hidden>
+                <div class="done-mark"><i class="fa-solid fa-check"></i></div>
+                <h3>Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly.</h3>
+                <p>Reference: <b id="contactRef">—</b>. We reply to most enquiries within one working day.</p>
+                <button type="button" class="btn-b js-ripple" id="contactAgain">
+                  <i class="fa-solid fa-plus"></i> Send another enquiry
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 12. FOOTER =================================================== -->
+  <footer class="foot">
+    <div class="shell">
+      <div class="foot-grid">
+        <div class="foot-about">
+          <a href="#hero" class="brand" style="margin-bottom:20px">
+            <span class="brand-mark">BDP</span>
+            <span>
+              <span class="brand-name">BHARDWAJ</span>
+              <span class="brand-sub">DIGITAL &amp; PRINT SOLUTIONS</span>
+            </span>
+          </a>
+          <p>Offset, digital and large-format printing under one roof, for brands that treat the package as part of the product.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <ul class="foot-links">
+            <li><a href="#about">About us</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#process">Our process</a></li>
+            <li><a href="#why">Why choose us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul class="foot-links">
+            <li><a href="Service.html">Commercial printing</a></li>
+            <li><a href="Service.html">Luxury packaging</a></li>
+            <li><a href="Service.html">Custom boxes</a></li>
+            <li><a href="Service.html">Business stationery</a></li>
+            <li><a href="Service.html">Labels &amp; stickers</a></li>
+            <li><a href="Service.html">Large format</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Products</h4>
+          <ul class="foot-links">
+            <li><a href="#products">Business cards</a></li>
+            <li><a href="#products">Luxury boxes</a></li>
+            <li><a href="#products">Paper bags</a></li>
+            <li><a href="#products">Gift boxes</a></li>
+            <li><a href="#products">Hang tags</a></li>
+            <li><a href="#products">Brochures</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-news">
+          <h4>Newsletter</h4>
+          <p style="font-size:.9rem">New finishes, stock arrivals and seasonal pricing — about once a month.</p>
+          <form class="news-form" id="newsForm" novalidate>
+            <label for="newsEmail" class="visually-hidden">Email address</label>
+            <input type="email" id="newsEmail" placeholder="Your email address" required />
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="foot-bar">
+        <span>© <span id="year">2026</span> Aurum Print &amp; Packaging. All rights reserved.</span>
+        <span>
+          <a href="#">Privacy policy</a> &nbsp;·&nbsp;
+          <a href="#">Terms</a> &nbsp;·&nbsp;
+          <a href="#hero" id="footTop">Back to top</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING UI ================================================== -->
+  <a class="wa" href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <!-- Quote modal -->
+  <div class="modal" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="quoteClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="quoteTitle">Request a quote</h3>
+      <p>Give us the basics and we will come back with pricing within one working day.</p>
+      <form id="quoteForm" novalidate>
+        <div class="field">
+          <label for="qName">Your name</label>
+          <input type="text" id="qName" placeholder="Priya Sharma" required />
+          <span class="err">Enter your name.</span>
+        </div>
+        <div class="field">
+          <label for="qPhone">Phone or WhatsApp</label>
+          <input type="tel" id="qPhone" placeholder="10-digit mobile number" required />
+          <span class="err">Enter a 10-digit phone number.</span>
+        </div>
+        <div class="field">
+          <label for="qWhat">What are we printing</label>
+          <input type="text" id="qWhat" placeholder="e.g. 1,000 rigid boxes, 12×12×6 cm" required />
+          <span class="err">Tell us what you need.</span>
+        </div>
+        <div class="form-alert" id="quoteAlert" role="alert" hidden>
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div>
+            <b>Request could not be sent</b>
+            <small id="quoteAlertText">Check your connection and try once more.</small>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-a js-ripple has-spin" id="quoteSubmit" style="width:100%">
+          <span class="btn-text">Send request <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="btn-spin" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image">
+    <button class="lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+    <button class="lb-next" id="lbNext" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+    <figure>
+      <img id="lbImg" src="" alt="" />
+      <figcaption>
+        <h3 id="lbTitle"></h3>
+        <small id="lbCat"></small>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- Bootstrap bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- Site scripts -->
+  <script src="script.js" defer></script>
+  <!-- product page script -->
+   <script>
+        // Load More Functionality
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const productsGrid = document.getElementById('productsGrid');
+        let productsLoaded = 4;
+        const totalProducts = 8;
+
+        loadMoreBtn.addEventListener('click', () => {
+            loadMoreBtn.classList.add('loading');
+            loadMoreBtn.textContent = 'Loading...';
+
+            // Simulate loading delay
+            setTimeout(() => {
+                const hiddenCards = document.querySelectorAll('.product-card.hidden');
+                
+                hiddenCards.forEach((card, index) => {
+                    if (index < 4) { // Load 4 more products
+                        card.classList.remove('hidden');
+                        card.style.animation = `fadeInUp 0.6s ease backwards`;
+                        card.style.animationDelay = `${index * 0.1}s`;
+                        productsLoaded++;
+                    }
+                });
+
+                loadMoreBtn.classList.remove('loading');
+
+                if (productsLoaded >= totalProducts) {
+                    loadMoreBtn.textContent = 'All Products Loaded';
+                    loadMoreBtn.disabled = true;
+                    loadMoreBtn.style.opacity = '0.6';
+                    loadMoreBtn.style.cursor = 'not-allowed';
+                } else {
+                    loadMoreBtn.textContent = 'Load More Products';
+                }
+            }, 500);
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll Animation for Cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .product-card').forEach(card => {
+            if (!card.classList.contains('hidden')) {
+                observer.observe(card);
+            }
+        });
+
+        // Add animation to newly loaded cards
+        const observeNewCards = () => {
+            document.querySelectorAll('.product-card:not(.hidden)').forEach(card => {
+                if (!card.classList.contains('observed')) {
+                    card.classList.add('observed');
+                    observer.observe(card);
+                }
+            });
+        };
+
+        // Observe new cards when load more is clicked
+        const originalLoadMoreClick = loadMoreBtn.onclick;
+        loadMoreBtn.addEventListener('click', () => {
+            setTimeout(observeNewCards, 600);
+        });
+    </script>
+</body>
+</html>
